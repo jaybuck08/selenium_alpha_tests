@@ -27,4 +27,4 @@
 # this prints all environment variables
 
 # print(os.environ["password"])
-#  this prints the speccified os.environ variable "password"
+#  this prints the speccified os.environ variable "password" ..

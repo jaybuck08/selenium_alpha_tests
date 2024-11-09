@@ -12,3 +12,12 @@
 #driver.switch_to.default_content()
 
 
+# use the below to activate the ".env" file
+# from dotenv import load_dotenv
+
+# the ".env" file is used to store variables tha
+
+# the gitignore file is used to hide/ignore files / folders only
+
+
+# import os

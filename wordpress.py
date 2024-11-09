@@ -5,12 +5,19 @@ from selenium.webdriver.common.keys import Keys
 
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+# print(os.environ)
+# print(os.environ["password"])
 
 # set options to make browser not to close
 options = Options()
 options.add_experimental_option("detach", True)
 
-url = "https://s-qkqgtyg4wbc3l.eu1.wpsandbox.org/wp-admin/"
+url = os.environ["url"]
 
 # add "option=options" below
 driver = webdriver.Edge(options=options)
@@ -18,18 +25,18 @@ driver.maximize_window()
 
 driver.get(url)
 
-access_code = driver.find_element(By.CLASS_NAME, value="form-control")
-access_code.send_keys(607)
-access_code.send_keys(Keys.ENTER)
+# access_code = driver.find_element(By.CLASS_NAME, value="form-control")
+# access_code.send_keys(607)
+# access_code.send_keys(Keys.ENTER)
 
 wordpress_username = driver.find_element(By.XPATH, "//input[@type='text']")
-wordpress_username.send_keys("adminuser391651")
+wordpress_username.send_keys(os.environ["user"])
 wordpress_password = driver.find_element(By.ID, value="user_pass")
-wordpress_password.send_keys("cvBbKdPCKB")
+wordpress_password.send_keys(os.environ["password"])
 
 wordpress_password.send_keys(Keys.ENTER)
 
-driver.find_element(By.XPATH, "//a[@href='https://s-qkqgtyg4wbc3l.eu1.wpsandbox.org/wp-admin/post-new.php']").click()
+driver.find_element(By.XPATH, f"//a[@href='{url}post-new.php']").click()
 
 add_title_cover = driver.find_element(By.CLASS_NAME, value="block-editor-iframe__container")
 
@@ -60,14 +67,8 @@ publish_2 = driver.find_element(By.XPATH, "//button[@class='components-button ed
 publish_2.click()
 
 
-view_post = WebDriverWait(driver,40).until(ec.presence_of_element_located((By.XPATH, "//a[@href='https://s-qkqgtyg4wbc3l.eu1.wpsandbox.org/we-are-the-champions-2/']")))
+view_post = WebDriverWait(driver,40).until(ec.presence_of_element_located((By.XPATH, "//a[@class='components-button is-primary']")))
 view_post.click()
 
-
-
-
-
-# view_post = WebDriverWait(driver,20).until(ec.presence_of_element_located((By.XPATH, "//a[@href='https://s-qkqgtyg4wbc3l.eu1.wpsandbox.org/we-are-the-champions-2/]")))
-# view_post.click()
 
 

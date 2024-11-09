@@ -59,9 +59,11 @@ publish.click()
 publish_2 = driver.find_element(By.XPATH, "//button[@class='components-button editor-post-publish-button editor-post-publish-button__button is-primary is-compact']")
 publish_2.click()
 
-driver.find_element(By.XPATH, "//a[@href='https://s-qkqgtyg4wbc3l.eu1.wpsandbox.org/we-are-the-champions-2/']").click()
 
-# view_post_container = driver.find_element(By.XPATH, "//div[@class='editor-post-publish-panel__content']")
+view_post = WebDriverWait(driver,40).until(ec.presence_of_element_located((By.XPATH, "//a[@href='https://s-qkqgtyg4wbc3l.eu1.wpsandbox.org/we-are-the-champions-2/']")))
+view_post.click()
+
+
 
 
 

@@ -6,12 +6,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 from dotenv import load_dotenv
+
+# used to import all varaiables to your file
 import os
 
 load_dotenv()
 
-# print(os.environ)
-# print(os.environ["password"])
 
 # set options to make browser not to close
 options = Options()

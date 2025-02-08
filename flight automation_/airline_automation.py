@@ -39,4 +39,23 @@ date.send_keys("11/02/2025")
 driver.find_element(by=By.XPATH, value='//button[@type="submit"]').click()
 
 
+price_container=driver.find_elements(by=By.XPATH, value = '//div[@class="flight-details false"]')
+
+price_list=[]
+
+for container in price_container:
+    price =container.find_element(by=By.XPATH, value = './/div[@class="mobile-price col-xs-4 col-md-12 col-sm-12 col-lg-12 false"]').text
+    price_list.append(price)
+
+
+
+
+print(price_list)
+
+
+
+
+
+
+
 

@@ -59,6 +59,6 @@ def arikFlightAutomation(location, destination, depDate):
 
     return get_minimum_flight_price_detail(flight_details)
 
-result = arikFlightAutomation("ABV","LOS","24/03/2025")
+# result = arikFlightAutomation("ABV","LOS","24/03/2025")
 
-print(result)
+# print(result)

@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 
 from selenium.webdriver.support.select import Select
 from minimum_price import get_minimum_flight_price_detail
+from avaliable_flights import check_if_value_in_select
 
 
 def aeroautomation(location, destination, depdate):
@@ -21,15 +22,25 @@ def aeroautomation(location, destination, depdate):
 
 # select state for outbound flight
     departure_state = driver.find_element(by=By.XPATH,value = '//select[@name="depPort"]')
-
     departure_selection = Select(departure_state)
+
+     # this checks if the location inserted is in the list
+    if not check_if_value_in_select(departure_selection.options, location):
+        return "location unavilable"
+
+    
     departure_selection.select_by_value(location)
 
 
 # select state for inbound flight
     arrival_state = driver.find_element(by=By.XPATH,value = '//select[@name="arrPort"]')
-
     arrival_selection = Select(arrival_state)
+
+    # this checks if the destination inserted is in the list
+    if not check_if_value_in_select(arrival_selection.options, destination):
+        return "destination unavailable"
+
+    
     arrival_selection.select_by_value(destination)
 
 
@@ -69,9 +80,9 @@ def aeroautomation(location, destination, depdate):
     driver.quit()
     
 
-    return get_minimum_flight_price_detail(price_list)
+    return {"flight": "arik", "details": get_minimum_flight_price_detail(price_list)}
 
-# print(aeroautomation("ABV","LOS","24/03/2025"))
+print(aeroautomation("ABV","LOS","24/03/2025"))
 
 
 

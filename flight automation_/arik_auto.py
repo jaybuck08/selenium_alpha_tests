@@ -4,12 +4,20 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions
 import time
+
 from minimum_price import get_minimum_flight_price_detail
+from avaliable_flights import check_if_value_in_select
+from date_validation import is_future
+from datetime import datetime
 
 URL = "https://www.arikair.com/"
 
 
 def arikFlightAutomation(location, destination, depDate):
+
+   # this checks that date selected is after a certain day
+    if not is_future(depDate):
+        return "Error: You can only select a flight date after present day."
 
     chrome_options = Options()
     chrome_options.add_experimental_option('detach', True)
@@ -24,19 +32,30 @@ def arikFlightAutomation(location, destination, depDate):
 
     from_selection = Select(driver.find_element(by=By.XPATH, value="//select[@id='depPort']"))
 
+
+    # this checks if the location inserted is in the list
+    if not check_if_value_in_select(from_selection.options, location):
+        return "location unavilable"
+    
+
     from_selection.select_by_value(location)
 
     time.sleep(5)
     dest_selection = Select(driver.find_element(by=By.XPATH, value="//select[@id='arrPort']"))
+    
+    # this checks if the destination inserted is in the list
+    if not check_if_value_in_select(dest_selection.options, destination):
+        return "destination unavailable"
+    
     dest_selection.select_by_value(destination)
 
 
     flight_date = driver.find_element(by=By.XPATH, value="//input[@id='departureDate']")
     flight_date.clear()
     flight_date.send_keys(depDate)
-
     driver.find_element(by=By.XPATH, value="//button[@id='search']").click()
 
+        
     time.sleep(5)
     result_containers = driver.find_elements(by=By.XPATH, value="//div[@class='js-journey']")
 
@@ -57,8 +76,8 @@ def arikFlightAutomation(location, destination, depDate):
 
     driver.quit()
 
-    return get_minimum_flight_price_detail(flight_details)
+    return {"flight": "arik", "details": get_minimum_flight_price_detail(flight_details)}
 
-# result = arikFlightAutomation("ABV","LOS","24/03/2025")
+result = arikFlightAutomation("ABV","LOS","23/3/2025")
 
-# print(result)
+print(result)

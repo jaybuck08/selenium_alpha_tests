@@ -4,7 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions
 import time
+
 from minimum_price import get_minimum_flight_price_detail
+from avaliable_flights import check_if_value_in_select
 
 URL = "https://flyairpeace.com/"
 
@@ -21,13 +23,21 @@ def airpeaceAutomation(location, destination, depDate):
 
     select_departure = Select(driver.find_element(by=By.XPATH, value="//select[@name='depPort']"))
 
-
+ # this checks if the location inserted is in the list
+    if not check_if_value_in_select(select_departure.options, location):
+        return "location unavilable"
+    
 
     select_departure.select_by_value(location)
 
     time.sleep(5)
 
     select_arrival = Select(driver.find_element(by=By.XPATH, value="//select[@name='arrPort']"))
+
+ # this checks if the destination inserted is in the list
+    if not check_if_value_in_select(select_arrival.options, destination):
+        return "destination unavailable"
+    
     select_arrival.select_by_value(destination)
 
 

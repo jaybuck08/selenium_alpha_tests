@@ -13,7 +13,7 @@ def is_future(date_str):
     return input_date.date() > today.date()
 
 
-# The beloe can also work for the date validation (confirm with ore how it can work for a specific date)
+# The below can also work for the date validation (confirm with ore how it can work for a specific date)
 
     # # Date validation
     # min_date = datetime.today()

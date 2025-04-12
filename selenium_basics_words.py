@@ -28,3 +28,61 @@
 
 # print(os.environ["password"])
 #  this prints the speccified os.environ variable "password" ....
+
+
+# __________________________ # creating basic functions:
+
+#  Let’s break it down **line by line** in the simplest way possible. Here's the same function that finds the product with the **lowest price** from a list of dictionaries — explained like you're brand new to Python. 😊
+
+
+# ### 🧠 First, here's the function:
+
+# ```python
+# def get_min_price_product(products):
+#     if not products:
+#         return None
+#     return min(products, key=lambda x: x['price'])
+# ```
+
+
+# #### `def get_min_price_product(products):`
+# - This **defines a function** called `get_min_price_product`.
+# - The function takes **one input**, a list called `products`.
+# - Each item in the `products` list should be a **dictionary** with at least a `"price"` key.
+
+
+# #### `if not products:`
+# - This checks if the `products` list is **empty**.
+# - In Python, `not products` means “if this list has nothing inside it…”
+
+
+# #### `return None`
+# - If the list is empty, we **stop the function** and return `None`.
+# - That way we don’t try to search for a price in an empty list (which would cause an error).
+
+
+# #### `return min(products, key=lambda x: x['price'])`
+# - This line finds the item with the **lowest price**.
+# - `min()` is a built-in Python function that returns the **smallest** item.
+# - We're telling `min()` to compare the **'price'** inside each dictionary.
+
+
+# #### `key=lambda x: x['price']`
+# - This tells `min()` *how* to compare items.
+# - `lambda x: x['price']` is just a quick way to say: “look at the `price` inside each item.”
+# - So for each item (called `x`), it grabs `x['price']` to use for comparison.
+
+
+# ### 🧪 Example for clarity:
+
+# ```python
+# products = [
+#     {"name": "Shoes", "price": 45.99},
+#     {"name": "Hat", "price": 15.49},
+#     {"name": "Jacket", "price": 89.00}
+# ]
+
+# cheapest = get_min_price_product(products)
+# print(cheapest)  # Output: {'name': 'Hat', 'price': 15.49}
+
+

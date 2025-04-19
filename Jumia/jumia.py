@@ -25,13 +25,22 @@ search_bar.send_keys(Keys.ENTER)
 
 driver.implicitly_wait(5)
 
-button_holder = driver.find_element(by=By.XPATH, value = '//div[@class="fc-dialog-container"]')
-consent_button = button_holder.find_element(by=By.XPATH, value = './/button[@class="fc-button fc-cta-do-not-consent fc-secondary-button"]').click()
+try:
+    
+    button_holder = driver.find_element(by=By.XPATH, value = '//div[@class="fc-dialog-container"]')
+    consent_button = button_holder.find_element(by=By.XPATH, value = './/button[@class="fc-button fc-cta-do-not-consent fc-secondary-button"]').click()
+
+# "pass" is used for everthing and "contiune" is used only for loops
+except:
+    pass 
 
 # getting container that holds all ear phones
 
-all_earphones = driver.find_element(by=By.XPATH, value= '//div[@class="-phs -pvxs row _no-g _4cl-3cm-shs"]')
-earphone_containers = all_earphones.find_elements(By.XPATH, value= './/article[@class="prd _fb col c-prd"]')
+# all_earphones = driver.find_element(by=By.XPATH, value= '//div[@class="-phs -pvxs row _no-g _4cl-3cm-shs"]')
+earphone_containers = driver.find_elements(By.XPATH, value= './/article[contains(@class,"prd")]')
+
+
+print (len(earphone_containers))
 
 
 final_prices = []
@@ -50,21 +59,31 @@ for earphone in earphone_containers:
 
     # appending the dictionary into a list
     final_prices.append(price_data)
-   
-print(final_prices)
 
-
-# find minimum price
 
 def price_extract (product_package):
     return product_package["price"]
 
-minimum = min(
-    final_prices,
-    key = lambda product_package : price_extract(product_package)
-)
+# statement below : if the length of final prices is less than 1, then print ()
 
-print(minimum)
+# note: "if not" converts true statements to false and vice versa
+
+if len (final_prices) < 1 : 
+    # print(final_prices)
+    print("search did not generate any result")
+
+else:
+# find minimum price
+
+   
+    minimum = min(
+        final_prices,
+        key = lambda product_package : price_extract(product_package)
+    )
+
+    print(minimum)
+
+
 
     
 # def price_extract (product_package):

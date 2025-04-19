@@ -64,7 +64,7 @@ for earphone in earphone_containers:
 def price_extract (product_package):
     return product_package["price"]
 
-# statement below : if the length of final prices is less than 1, then print ()
+# statement below : if the length of final prices is less than 1, then print () ..
 
 # note: "if not" converts true statements to false and vice versa
 

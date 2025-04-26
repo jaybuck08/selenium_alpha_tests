@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.edge.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException
 import time
 
 
@@ -34,46 +35,73 @@ try:
 except:
     pass 
 
-# getting container that holds all ear phones
-
-# all_earphones = driver.find_element(by=By.XPATH, value= '//div[@class="-phs -pvxs row _no-g _4cl-3cm-shs"]')
-earphone_containers = driver.find_elements(By.XPATH, value= './/article[contains(@class,"prd")]')
-
-
-print (len(earphone_containers))
 
 
 final_prices = []
 
-for earphone in earphone_containers:
+while True:
+    # print (len(earphone_containers))
+    print ("reviewing page")
 
-    # names_and_prices = earphone.find_element(By.XPATH, './/div[@class="info"]').text
-    names  = earphone.find_element(By.XPATH,'.//h3[@class="name"]').text
-    price_raw = earphone.find_element(By.XPATH, './/div[contains(@class,"prc")]').text
+    # getting container that holds all ear phones
+    # all_earphones = driver.find_element(by=By.XPATH, value= '//div[@class="-phs -pvxs row _no-g _4cl-3cm-shs"]')
+    earphone_containers = driver.find_elements(By.XPATH, value= './/article[contains(@class,"prd")]')
+
+    for earphone in earphone_containers:
+        try:
+            #names_and_prices = earphone.find_element(By.XPATH, './/div[@class="info"]').text
+            names = earphone.find_element(By.XPATH,'.//h3[@class="name"]').text
+            price_raw = earphone.find_element(By.XPATH, './/div[contains(@class,"prc")]').text
+
+            # print(f"Found: {names} - {price}")
+
+            # removing the naira sign, space and comma then converting to float
+            price = price_raw.replace(",","").replace("₦ ","")
+
+            # print(price.isnumeric)
+
+            # note: "if not" converts true statements to false and vice versa
+            if not price.isnumeric():
+                price = "9999999999"
     
-    # removing the naira sign, space and comma then converting to float
-    price_cleaned = float(price_raw.replace(",","").replace("₦ ",""))
+           
+            price_cleaned = float(price)
 
-    # putting the price and name in a dctionary beacuse price is a float and name is a string
-    price_data = {"name":names, "price":price_cleaned}
+            # putting the price and name in a dictionary beacuse price is a float and name is a string
+            price_data = {"name":names, "price":price_cleaned}
 
-    # appending the dictionary into a list
-    final_prices.append(price_data)
+            # appending the dictionary into a list
+            final_prices.append(price_data)
+
+            # or write in a shorter format as : final_prices.append({"name":names, "price":price_cleaned})
+    
+        except NoSuchElementException:
+            print("missing name or price for specific product - skipping")
+
+
+    try:
+        # try to click the next button to get to the next page
+        next_button = driver.find_element(By.XPATH, value = "//a[@aria-label='Next Page']")
+        next_button.click()
+        print ("clicked next")
+
+    except NoSuchElementException:
+        print("Reached the end")
+        break
 
 
 def price_extract (product_package):
     return product_package["price"]
 
-# statement below : if the length of final prices is less than 1, then print () ..
-
-# note: "if not" converts true statements to false and vice versa
+    # statement below : if the length of final prices is less than 1, then print () ..
+    # note: "if not" converts true statements to false and vice versa
 
 if len (final_prices) < 1 : 
     # print(final_prices)
     print("search did not generate any result")
 
 else:
-# find minimum price
+    # find minimum price
 
    
     minimum = min(

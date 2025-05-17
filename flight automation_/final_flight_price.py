@@ -4,7 +4,7 @@ from minimum_price import get_minimum_flight_price_detail
 
 LOC = "ABV"
 DES = "LOS"
-DEPDATE = "22/04/2025"
+DEPDATE = "22/07/2025"
 
 
 result1 = aeroautomation(LOC,DES,DEPDATE)

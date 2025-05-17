@@ -82,7 +82,7 @@ def aeroautomation(location, destination, depdate):
 
     return {"flight": "arik", "details": get_minimum_flight_price_detail(price_list)}
 
-# print(aeroautomation("ABV","LOS","22/04/2025"))
+# print(aeroautomation("ABV","LOS","22/07/2025"))
 
 
 

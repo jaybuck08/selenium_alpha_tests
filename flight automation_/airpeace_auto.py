@@ -71,4 +71,4 @@ def airpeaceAutomation(location, destination, depDate):
 
     return get_minimum_flight_price_detail(flight_details)
 
-print(airpeaceAutomation("ABV","LOS","24/03/2025"))
+print(airpeaceAutomation("ABV","LOS","24/06/2025"))

@@ -130,17 +130,101 @@ football_name = "michael angelo"
 # put in a list and print out.
 
 # 1 get an input of names
-names = input("firstname: ")
+# names = input("firstname: ")
 
-#2 define vowels
-vowels = "aeiou"
+# #2 define vowels
+# vowels = "aeiou"
 
-#3 create an empty list to store the vowels extracted
-vowel_list = []
+# #3 create an empty list to store the vowels extracted
+# vowel_list = []
 
-# # 4 Loop through each name and print
-for vowel_letters in names:
-    if vowel_letters in vowels:
-      vowel_list.append(vowel_letters)
+# # # 4 Loop through each name and print
+# for vowel_letters in names:
+#     if vowel_letters in vowels:
+#       vowel_list.append(vowel_letters)
 
-print(vowel_list)
+# print(vowel_list)
+
+
+
+# ____________________________# Assessment Task: Student Grade Processing System_________________________________________
+
+# Write a Python program that simulates a basic student grade processing system with the following features:
+
+#### *Requirements:*
+
+# 1. *Define a function* process_students(data) that takes a list of student records. Each record is a dictionary containing:
+
+#    * 'name': the student's name (string)
+#    * 'scores': a list of integers representing test scores
+
+#    Example input:
+
+#    python
+#    students = [
+#        {"name": "Alice", "scores": [78, 85, 90]},
+#        {"name": "Bob", "scores": [60, 65, 58]},
+#        {"name": "Charlie", "scores": [95, 92, 88]},
+#    ]
+   
+
+# 2. Inside the function, do the following *for each student*:
+
+#    * Calculate the *average score*.
+#    * Use conditionals to assign a *grade* based on the average:
+
+#      * 90 and above: "A"
+#      * 80–89: "B"
+#      * 70–79: "C"
+#      * 60–69: "D"
+#      * Below 60: "F"
+#    * Store and print a summary like:
+
+#      plaintext
+#      Alice - Average: 84.33 - Grade: B
+
+students = [
+    
+        {"name": "Alice", "scores": [78, 85, 90]},
+        {"name": "Bob", "scores": [60, 65, 58]},
+        {"name": "Charlie", "scores": [95, 92, 88]},
+
+
+        ]
+
+def process_students(students):
+   
+    summary = []
+   
+    for candidate in students:
+
+        
+
+        name = candidate["name"]
+        scores = candidate["scores"]
+        average =  sum(scores) / len(scores)
+
+        # print(average)
+
+        if average >= 90:
+            grade = "A"
+        elif average >= 80:
+            grade = "B"
+        elif average >= 70:
+            grade = "C" 
+        elif average >= 60:
+            grade = "D"
+        else:
+            grade = "F" 
+        
+        # print(f"{name} - Average: {average} - Grade: {grade}")
+
+        summary.append()
+        return (f"{name} - Average: {average} - Grade: {grade}")
+        
+
+summary = process_students(students)
+print(summary)
+
+        
+   

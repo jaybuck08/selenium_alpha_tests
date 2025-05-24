@@ -198,8 +198,6 @@ def process_students(students):
    
     for candidate in students:
 
-        
-
         name = candidate["name"]
         scores = candidate["scores"]
         average =  sum(scores) / len(scores)
@@ -217,10 +215,10 @@ def process_students(students):
         else:
             grade = "F" 
         
-        # print(f"{name} - Average: {average} - Grade: {grade}")
+        summary_details = (f"{name} - Average: {average} - Grade: {grade}")
+        summary.append(summary_details)
 
-        summary.append()
-        return (f"{name} - Average: {average} - Grade: {grade}")
+    return (summary)
         
 
 summary = process_students(students)

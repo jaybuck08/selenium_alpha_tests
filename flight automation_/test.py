@@ -183,46 +183,91 @@ football_name = "michael angelo"
 #      plaintext
 #      Alice - Average: 84.33 - Grade: B
 
-students = [
+# students = [
     
-        {"name": "Alice", "scores": [78, 85, 90]},
-        {"name": "Bob", "scores": [60, 65, 58]},
-        {"name": "Charlie", "scores": [95, 92, 88]},
+#         {"name": "Alice", "scores": [78, 85, 90]},
+#         {"name": "Bob", "scores": [60, 65, 58]},
+#         {"name": "Charlie", "scores": [95, 92, 88]},
 
 
-        ]
+#         ]
 
-def process_students(students):
+# def process_students(students):
    
-    summary = []
+#     summary = []
    
-    for candidate in students:
+#     for candidate in students:
 
-        name = candidate["name"]
-        scores = candidate["scores"]
-        average =  sum(scores) / len(scores)
+#         name = candidate["name"]
+#         scores = candidate["scores"]
+#         average =  sum(scores) / len(scores)
 
-        # print(average)
+#         # print(average)
 
-        if average >= 90:
-            grade = "A"
-        elif average >= 80:
-            grade = "B"
-        elif average >= 70:
-            grade = "C" 
-        elif average >= 60:
-            grade = "D"
-        else:
-            grade = "F" 
+#         if average >= 90:
+#             grade = "A"
+#         elif average >= 80:
+#             grade = "B"
+#         elif average >= 70:
+#             grade = "C" 
+#         elif average >= 60:
+#             grade = "D"
+#         else:
+#             grade = "F" 
         
-        summary_details = (f"{name} - Average: {average} - Grade: {grade}")
-        summary.append(summary_details)
+#         summary_details = (f"{name} - Average: {average} - Grade: {grade}")
+#         summary.append(summary_details)
 
-    return (summary)
+#     return (summary)
         
 
-summary = process_students(students)
-print(summary)
+# summary = process_students(students)
+# print(summary)
 
-        
-   
+
+#____________________________exercise________________________________________________  
+      
+# Extract a number from the terminal, convert to an integer and divide by 2
+
+# password = input("code: ")
+# output = int(password)
+# result = output/2
+
+# print(result)
+
+#_______________arithmetic assignment (%= or -= or += or etc)____________________________
+# age = 20
+# age += 10
+# print(age)
+
+# the below divides and does not give a remainder beacuse of the double slash
+# age = 21 // 2 
+# print(age)
+
+#___________escape characters (\n, end=, \t, + (used to join strings together), etc)____________________________
+# print("Hello \n World") # prints world in a new line
+# print ("world")
+
+
+#___________DATA Structures in Python______________
+
+# Built in:
+
+# Mutable (values can be edited)
+# 1. List --> (ordered collection)    e.g.  names = ["John", "Mary"]
+    # names.append (adds one value at a time) e.g. names.append = ["mary","john"]
+    # names.extend (adds multiple values in a list or curved bracket) e.g. names.extend = [{"john","mary"}]
+    # names.remove = ["John"] or names.pop(0)  --- used to remove by values or index respectively
+    # names.clear (this clears the list) etc.
+    
+      
+# 2. Dictionary --> (has key pair value)
+
+# 3. sets --> (unordered but cannot have repeated value)
+
+# Immutable (cannot be edited)
+# 4. Tuple --> (ordered collectiton)
+
+# other data structures (not built in):
+# stacks, queues, trees, graphs, linked list.
+

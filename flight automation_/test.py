@@ -254,14 +254,23 @@ football_name = "michael angelo"
 # Built in:
 
 # Mutable (values can be edited)
-# 1. List --> (ordered collection)    e.g.  names = ["John", "Mary"]
+# 1. List [uses square brackets] --> (and is an ordered collection)    e.g.  names = ["John", "Mary"]
     # names.append (adds one value at a time) e.g. names.append = ["mary","john"]
     # names.extend (adds multiple values in a list or curved bracket) e.g. names.extend = [{"john","mary"}]
     # names.remove = ["John"] or names.pop(0)  --- used to remove by values or index respectively
     # names.clear (this clears the list) etc.
+
+    # statistics = [23, 99, 900, 34, 55]
+    # statistics.sort(reverse=True)
+    # print(statistics)
+
+    # statistics.reverse()
+    # statistics.sort(reverse=True)
+
+    # it is very important to note that DATA STRUCTURES do not create copies but strings CREATES COPIES when using a variable multiple times***
     
       
-# 2. Dictionary --> (has key pair value)
+# 2. Dictionary {uses curly brackets} --> (and has key pair value)
 
 # 3. sets --> (unordered but cannot have repeated value)
 
@@ -271,3 +280,16 @@ football_name = "michael angelo"
 # other data structures (not built in):
 # stacks, queues, trees, graphs, linked list.
 
+
+
+#______________exercise__________________
+# create a list of random data and use the for loop to print out only string values.
+
+mixed_bag = [12,"john", "apple", 35, "red", True, False, 9000]
+new_bag = []
+
+for values in mixed_bag:
+    if type(values) == str:
+        new_bag.append(values)
+print(new_bag)
+    

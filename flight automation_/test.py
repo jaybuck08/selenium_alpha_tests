@@ -249,7 +249,7 @@ football_name = "michael angelo"
 # print ("world")
 
 
-#___________DATA Structures in Python______________
+#_____________DATA Structures in Python___________________
 
 # Built in:
 
@@ -268,6 +268,16 @@ football_name = "michael angelo"
     # statistics.sort(reverse=True)
 
     # it is very important to note that DATA STRUCTURES do not create copies but strings CREATES COPIES when using a variable multiple times***
+    #______________exercise__________________
+    # create a list of random data and use the for loop to print out only string values.
+
+    # mixed_bag = [12,"john", "apple", 35, "red", True, False, 9000]
+    # new_bag = []
+
+    # for values in mixed_bag:
+    #     if type(values) == str:
+    #         new_bag.append(values)
+    # print(new_bag)
     
       
 # 2. Dictionary {uses curly brackets} --> (and has key pair value)
@@ -282,14 +292,5 @@ football_name = "michael angelo"
 
 
 
-#______________exercise__________________
-# create a list of random data and use the for loop to print out only string values.
 
-mixed_bag = [12,"john", "apple", 35, "red", True, False, 9000]
-new_bag = []
-
-for values in mixed_bag:
-    if type(values) == str:
-        new_bag.append(values)
-print(new_bag)
     

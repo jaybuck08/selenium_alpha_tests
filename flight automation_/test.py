@@ -255,10 +255,13 @@ football_name = "michael angelo"
 
 # Mutable (values can be edited)
 # 1. List [uses square brackets] --> (and is an ordered collection)    e.g.  names = ["John", "Mary"]
+
     # names.append (adds one value at a time) e.g. names.append = ["mary","john"]
     # names.extend (adds multiple values in a list or curved bracket) e.g. names.extend = [{"john","mary"}]
     # names.remove = ["John"] or names.pop(0)  --- used to remove by values or index respectively
     # names.clear (this clears the list) etc.
+    # names.insert (this adds a value or number to a specific place on the list)
+    
 
     # statistics = [23, 99, 900, 34, 55]
     # statistics.sort(reverse=True)
@@ -268,6 +271,7 @@ football_name = "michael angelo"
     # statistics.sort(reverse=True)
 
     # it is very important to note that DATA STRUCTURES do not create copies but strings CREATES COPIES when using a variable multiple times***
+
     #______________exercise__________________
     # create a list of random data and use the for loop to print out only string values.
 
@@ -278,9 +282,62 @@ football_name = "michael angelo"
     #     if type(values) == str:
     #         new_bag.append(values)
     # print(new_bag)
+
+    #______________exercise__________________
+    # write a python program that takes a list of numbers [30, 2, 31, 4, 0, 11, 16, 98].
+    # check if number is an even number, if not, add 1 to it and print a new sorted list
+
+    #     random_bag = [30, 2, 31, 4, 0, 11, 16, 98]
+    # new_bag = []
+
+    # for numbers in random_bag:
+    #     if numbers % 2 == 0:
+    #         new_bag.append(numbers)
+
+    #     else:
+    #         new_bag.append(numbers + 1)
+
+    # new_bag.sort()
+    # print("Answer", new_bag)
+
     
       
 # 2. Dictionary {uses curly brackets} --> (and has key pair value)
+
+    # user_info = {"name": "james", "age": 32, "dob":"1st March 1994"}
+
+    # user_info ["dob"] = "email"  ..... #add new value to the dictionary
+
+    # ____________________exercise________________________
+    # write a python script that takes a list containing mixed data types (integers, strings, float, boolean) & peform the following:
+    # return a dictionary with 3 keys: numbers (integers & floats) in ascending order
+    # strings: all stings coverted to uppercase
+    # sum_numbers: sum of all numeric values (integers & floats)
+
+mixed_data = [1,11, 12.0, 3.5, "giancarlo", "martini", True, False]
+
+numbers = []
+strings = []
+boolean = []
+
+# creating a dictionary
+result = {"numbers": [], "strings": [], "sum_numbers": 0, "boolean":[]}
+
+for items in mixed_data:
+    if type (items) == int or type(items) == float:
+        numbers.append(items)
+    
+    elif type(items) == boolean:
+        boolean.append
+
+    elif type (items) == str:
+        strings.append(items.upper())
+
+
+result = {"numbers": sorted(numbers), "strings": strings, "sum_numbers": sum(numbers),"boolean":[]}
+print(result)
+
+
 
 # 3. sets --> (unordered but cannot have repeated value)
 
@@ -293,4 +350,4 @@ football_name = "michael angelo"
 
 
 
-    
+

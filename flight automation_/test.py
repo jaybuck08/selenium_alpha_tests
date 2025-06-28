@@ -325,29 +325,44 @@ result = {"numbers": [], "strings": [], "sum_numbers": 0, "boolean":[]}
 
 for items in mixed_data:
     if type (items) == int or type(items) == float:
-        numbers.append(items)
+        result["numbers"].append(items)
     
-    elif type(items) == boolean:
-        boolean.append
+    elif type(items) == bool:
+        result["boolean"].append(items)
 
     elif type (items) == str:
-        strings.append(items.upper())
+        result["strings"].append(items.upper())
 
 
-result = {"numbers": sorted(numbers), "strings": strings, "sum_numbers": sum(numbers),"boolean":[]}
-print(result)
-
+result["sum_numbers"] = sum(result["numbers"])
+# print(result)
 
 
 # 3. sets --> (unordered but cannot have repeated value)
 
+    # names = {"john","james","mary"}
+
+    # # valu = names.copy ---- this assigns names to valu as a copy. THis means that the original name can still be called later and remains unchanged.
+    # # value = set() ---- this means an empty set
+
+
 # Immutable (cannot be edited)
 # 4. Tuple --> (ordered collectiton)
 
+    # names = ("john","james","mary")
+    # othernames = ("mary","josiah")
+
+    # Tuple has two methods; count and list
+
+    # print(names.count("john"))
+    # print(len(names))
+    # print(names.index("john"))
+
+    # print(names+othernames)   # merging two Tuples to create a new one
+
+
 # other data structures (not built in):
 # stacks, queues, trees, graphs, linked list.
-
-
 
 
 

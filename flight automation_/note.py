@@ -316,7 +316,7 @@ football_name = "michael angelo"
 
     # mixed_data = [1,11, 12.0, 3.5, "giancarlo", "martini", True, False]
 
-    # numbers = []
+    # numbers = [] #  or result["numbers"] = []  ---- this could be better when dealing with dictionaries
     # strings = []
     # boolean = []
 

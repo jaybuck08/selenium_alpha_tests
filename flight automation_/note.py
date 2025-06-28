@@ -314,36 +314,43 @@ football_name = "michael angelo"
     # strings: all stings coverted to uppercase
     # sum_numbers: sum of all numeric values (integers & floats)
 
-mixed_data = [1,11, 12.0, 3.5, "giancarlo", "martini", True, False]
+    # mixed_data = [1,11, 12.0, 3.5, "giancarlo", "martini", True, False]
 
-numbers = []
-strings = []
-boolean = []
+    # numbers = []
+    # strings = []
+    # boolean = []
 
 # creating a dictionary
-result = {"numbers": [], "strings": [], "sum_numbers": 0, "boolean":[]}
+    # result = {"numbers": [], "strings": [], "boolean":[], "sum_numbers": 0 }
 
-for items in mixed_data:
-    if type (items) == int or type(items) == float:
-        result["numbers"].append(items)
-    
-    elif type(items) == bool:
-        result["boolean"].append(items)
+    # for items in mixed_data:
+    #     if type (items) == int or type(items) == float:
+    #         result["numbers"].append(items)
+        
+    #     elif type(items) == bool:
+    #         result["boolean"].append(items)
 
-    elif type (items) == str:
-        result["strings"].append(items.upper())
+    #     elif type (items) == str:
+    #         result["strings"].append(items.upper())
 
 
-result["sum_numbers"] = sum(result["numbers"])
-print(result)
+    # result["sum_numbers"] = sum(result["numbers"])
+    # print(result)
 
 
 # 3. sets --> (unordered but cannot have repeated value)
 
     # names = {"john","james","mary"}
+    # surnames = {"james", "jack "joan"}
 
     # # valu = names.copy() ---- this assigns names to valu as a copy. THis means that the original name can still be called later and remains unchanged.
     # # value = set() ---- this means an empty set
+
+    # print(names.difference(surnames)) # means what is available in names that is not in surnames
+    # intersection, symmetric_difference and union are also methods. 
+    # pop removes a random value but remove takes away a specific value
+    
+
 
 
 # Immutable (cannot be edited)

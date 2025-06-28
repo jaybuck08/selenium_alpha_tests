@@ -335,14 +335,14 @@ for items in mixed_data:
 
 
 result["sum_numbers"] = sum(result["numbers"])
-# print(result)
+print(result)
 
 
 # 3. sets --> (unordered but cannot have repeated value)
 
     # names = {"john","james","mary"}
 
-    # # valu = names.copy ---- this assigns names to valu as a copy. THis means that the original name can still be called later and remains unchanged.
+    # # valu = names.copy() ---- this assigns names to valu as a copy. THis means that the original name can still be called later and remains unchanged.
     # # value = set() ---- this means an empty set
 
 

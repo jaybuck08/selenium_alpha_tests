@@ -314,28 +314,28 @@ football_name = "michael angelo"
     # strings: all stings coverted to uppercase
     # sum_numbers: sum of all numeric values (integers & floats)
 
-    # mixed_data = [1,11, 12.0, 3.5, "giancarlo", "martini", True, False]
+# mixed_data = [1,11, 12.0, 3.5, "giancarlo", "martini", True, False]
 
-    # numbers = [] #  or result["numbers"] = []  ---- this could be better when dealing with dictionaries
-    # strings = []
-    # boolean = []
+# numbers = [] #  or result["numbers"] = []  ---- this could be better when dealing with dictionaries
+# strings = []
+# boolean = []
 
-# creating a dictionary
-    # result = {"numbers": [], "strings": [], "boolean":[], "sum_numbers": 0 }
+# # creating a dictionary
+# result = {"numbers": [], "strings": [], "boolean":[], "sum_numbers": 0 }
 
-    # for items in mixed_data:
-    #     if type (items) == int or type(items) == float:
-    #         result["numbers"].append(items)
+# for items in mixed_data:
+#     if type (items) == int or type(items) == float:
+#         result["numbers"].append(items)
         
-    #     elif type(items) == bool:
-    #         result["boolean"].append(items)
+#     elif type(items) == bool:
+#         result["boolean"].append(items)
 
-    #     elif type (items) == str:
-    #         result["strings"].append(items.upper())
+#     elif type (items) == str:
+#         result["strings"].append(items.upper())
 
 
-    # result["sum_numbers"] = sum(result["numbers"])
-    # print(result)
+# result["sum_numbers"] = sum(result["numbers"])
+# print(result)
 
 
 # 3. sets --> (unordered but cannot have repeated value)
@@ -370,6 +370,87 @@ football_name = "michael angelo"
 
 # other data structures (not built in):
 # stacks, queues, trees, graphs, linked list.
+
+# -----------------------------------------------------------------------------------
+
+# Task Description:
+# You're given a list of students. Each student has a name and a list of scores.
+# Use lists, dictionaries, tuples, and basic data types (int, str, float) to:
+# 1. Store the student data.
+# 2. Print each student's average score.
+# 3. Find the student with the highest average.
+# 4. Sort and print students based on their average scores (highest to lowest).
+# 5. Store the result as a list of tuples: (student_name, average_score).
+
+# Sample Data:
+
+    # students = [
+    #     {"name": "Alice", "scores": [80, 90, 85]},
+    #     {"name": "Bob", "scores": [70, 75, 78]},
+    #     {"name": "Charlie", "scores": [95, 85, 92]},
+    #     {"name": "Diana", "scores": [60, 65, 70]},
+
+    #     ]
+
+
+    # highest_avg = 0
+    # highest_student = ""
+
+    # for student in students:
+    #     name = student["name"]
+    #     scores = student["scores"]
+    #     average = sum(scores) / len(scores)
+
+    #     print(f"{name}:{average}")
+        
+    #  # Check if this student has the highest average
+
+
+    #     if average > highest_avg:
+    #         highest_avg = average
+    #         highest_student = name
+
+    # print("student with highest average is", highest_student,"with", highest_avg)
+
+
+
+# _____Functions__________________________________________
+
+    # anything that needs to  be used moultiple times can be stored in a function.
+
+    # def average_student_score():
+    # def sum_numbers(*arg):   # this does not need you to add all the values when calling the function
+
+    # def sum_numbers(a, b, c, d):
+    #     print(a, b, c, d)
+
+    # sum_numbers()
+
+    # use "return" to ensure a value is displayed for any variable when called below the return
+
+#  exercise______________________
+#  create a function that takes in a list of names 
+#  return the names in a new list without "a" . replcae with a space
+
+names = ["ameobi", "justin", "amara", "gates"]
+
+def replacing_a_(names):
+
+    edited_names = []
+
+    for name in names:
+        new_name = name.replace("a", "")
+        edited_names.append(new_name)
+
+    return edited_names  
+
+result = replacing_a_(names)  # always call the function before printing
+print(result)
+
+
+
+
+
 
 
 

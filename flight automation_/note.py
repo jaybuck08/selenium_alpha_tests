@@ -432,20 +432,51 @@ football_name = "michael angelo"
 #  create a function that takes in a list of names 
 #  return the names in a new list without "a" . replcae with a space
 
-names = ["ameobi", "justin", "amara", "gates"]
+# names = ["ameobi", "justin", "amara", "gates"]
 
-def replacing_a_(names):
+# def replacing_a_(names):
 
-    edited_names = []
+#     edited_names = []
 
-    for name in names:
-        new_name = name.replace("a", "")
-        edited_names.append(new_name)
+#     for name in names:
+#         new_name = name.replace("a", "")
+#         edited_names.append(new_name)
 
-    return edited_names  
+#     return edited_names  
 
-result = replacing_a_(names)  # always call the function before printing
+# result = replacing_a_(names)  # always call the function before printing
+# print(result)
+
+# write a function char_frequency (text) that returns the frequecy of each character
+# In the given string (case-sensitive), excluding spaces.
+
+# return it as a sorted list of tuples (character, frequency), sorted by frequency in decreasing order
+
+#Input: "hello world L"
+#output: [('l', 3), ('o', 2), ('h', 1), ('e', 1), ('w', 1), ('r', 1), ('d', l), ('L', 1)]
+
+
+def char_frequency(text):
+
+    split_text = [char for char in text.replace(" ", "")]
+
+    removed_duplicate = list(set(split_text))
+
+    char_result = []
+
+    for value in removed_duplicate:
+        
+        count_result = split_text.count(value)
+        char_result.append( (value, count_result))
+
+    return char_result
+    
+
+result = char_frequency("hello world L")
 print(result)
+
+
+
 
 
 

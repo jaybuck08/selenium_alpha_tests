@@ -429,6 +429,7 @@ football_name = "michael angelo"
     # use "return" to ensure a value is displayed for any variable when called below the return
 
 #  exercise______________________
+
 #  create a function that takes in a list of names 
 #  return the names in a new list without "a" . replcae with a space
 
@@ -456,32 +457,113 @@ football_name = "michael angelo"
 #output: [('l', 3), ('o', 2), ('h', 1), ('e', 1), ('w', 1), ('r', 1), ('d', l), ('L', 1)]
 
 
-def char_frequency(text):
+# def char_frequency(text):
 
-    split_text = [char for char in text.replace(" ", "")]
+#     split_text = [char for char in text.replace(" ", "")]
 
-    removed_duplicate = list(set(split_text))
+#     removed_duplicate = list(set(split_text))
 
-    char_result = []
+#     char_result = []
 
-    for value in removed_duplicate:
+#     for value in removed_duplicate:
         
-        count_result = split_text.count(value)
-        char_result.append( (value, count_result))
+#         count_result = split_text.count(value)
+#         char_result.append( (value, count_result))
 
-    return char_result
+#     return char_result
     
 
-result = char_frequency("hello world L")
-print(result)
+# result = char_frequency("hello world L")
+# print(result)
+
+
+#  exercise______________________
+
+# create a function calculator (a:float, b:float, operationLstr) -> float
+# it should support the following operations: "add", "subtract", "multiply", "divide"
+
+# Handle
+# division by zero
+# invalid iperation string
+
+
+# def calculator(a: float, b: float, operation: str) -> float:
+
+#     if operation == "add":
+#         return a + b
+#     elif operation == "subtract":
+#         return a - b
+#     elif operation == "multiply":
+#         return a * b
+    
+#     # division by zero
+
+#     # elif operation == "divide":
+#     #     if b == 0:
+#     #         print("Error: Division by zero")
+#     #         return
+#     #     return a / b
+    
+#     # or
+
+#     elif operation == "divide":
+#         try:
+#            return  a / b
+#         except ZeroDivisionError:
+#             return 0
+            
+    
+#     # invalid operation string
+
+#     # else:
+#     #     print("Error: Invalid operation.")
+#     #     return
+    
+#     # or
+
+#     else:
+#         return "invalid operation"
 
 
 
+# result = calculator (10, 2, "add")
+# print(result)
+
+# # or 
+
+# print(calculator(10, 2, "add")) 
+# print(calculator(10, 2, "subtract")) 
+# print(calculator(10, 2, "multiply")) 
+# print(calculator(10, 2, "divide")) 
 
 
+#  exercise____________________________________
+
+# write a function min_max(numbers: list[int]) -> tuple[int, int]
+# Return a tuple of the form (min, max).
+
+def min_max (numbers: list[int]) -> tuple [ int, int]:
 
 
+    if type(numbers)!=list:
+        return "invalid" 
+    
+    minimum = min(numbers)
+    maximum = max(numbers)
 
+    return maximum,minimum
+    
+    # or
 
+    # try:
+        
+    #     minimum = min(numbers)
+    #     maximum = max(numbers)
 
+    #     return maximum,minimum
+    
+    # except:
+    #     return "invalid"
 
+   
+print (min_max([2, 16, 22, 98, 4, 11,]))

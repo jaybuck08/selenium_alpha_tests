@@ -566,4 +566,29 @@ def min_max (numbers: list[int]) -> tuple [ int, int]:
     #     return "invalid"
 
    
-print (min_max([2, 16, 22, 98, 4, 11,]))
+# print (min_max([2, 16, 22, 98, 4, 11,]))
+
+
+#  exercise____________________________________
+
+# create a function that takes two arguments of numbers and prints out the largest number
+
+def all_digits (a, b):
+
+    try:
+
+        if a > b:
+
+            print(a)
+
+        else:
+
+            print(b)
+
+    except: 
+        return "invalid"
+
+ 
+all_digits(20, 2)
+
+

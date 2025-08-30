@@ -591,4 +591,6 @@ def all_digits (a, b):
  
 all_digits(20, 2)
 
-
+# the difference between time.sleep and webdriver wait is that:
+# time.sleep will need to wait the whole time e.g "time.sleep(10)" before moving to the next page and webdriver wait will wait until the item is found. 
+# This means if waiting for 10 seconds, and finds elemnt in 5, it will move to the next page.

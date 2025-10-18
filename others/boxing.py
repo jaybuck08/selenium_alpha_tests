@@ -32,7 +32,7 @@ fighters = fighters_container.find_elements(by=By.XPATH, value='.//div[@class="c
 
 for index in range(len(fighters)):
 
-    fighter = driver.find_elements (by=By.XPATH, value='.//div[@class="col-span-12 flex flex-col justify-start gap-ringtvGapMobile overflow-hidden rounded-[2rem] bg-[#FFFBF1] p-4 sm:col-span-6 lg:col-span-4 xl:col-span-3 3xl:col-span-2"]')[index]
+    fighter = driver.find_elements (by=By.XPATH, value='//div[@class="col-span-12 flex flex-col justify-start gap-ringtvGapMobile overflow-hidden rounded-[2rem] bg-[#FFFBF1] p-4 sm:col-span-6 lg:col-span-4 xl:col-span-3 3xl:col-span-2"]')[index]
 
     fighter.click()
 
@@ -46,16 +46,23 @@ for index in range(len(fighters)):
 
     for details in fighter_details:
 
-        print(details.text)
+        # print(details.text)
 
         nickname = details.find_element(by=By.XPATH, value=".//span[@class='text-nowrap font-roboto ar:font-arabicFont ar:!font-bold']").text
-        # print(nickname)
+        print(nickname)
 
 
     driver.back()
     # time.sleep(5)
     
-   
+    #  for i in range(len(fighter_details)):
+
+    #     details = fighter_details[i]
+    #     # print(details.text)
+
+    #     sectioned_details = details.find_elements(By.XPATH,".//span[@class='text-nowrap font-roboto ar:font-arabicFont ar:!font-bold']")[index]
+
+    #     print(sectioned_details.text)
   
 
         

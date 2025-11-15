@@ -40,7 +40,8 @@ for index in Puma_shirts:
 
 
 # show only shirts that cost more than 100,000
-    if price < 100000:
-        print("Shirt price:", price, shirt_name)
-    
+    if price < 50000:
+        # print("Shirt price:", price, shirt_name)
+        print(f"Shirt price:{shirt_name}{price}")
+
    

@@ -28,16 +28,42 @@ shirt_collection = driver.find_element (by=By.XPATH, value ='//div[@class="colle
 
 shirts = shirt_collection.find_elements (by=By.XPATH, value = './/product-card[@class="product-card"]')
 
-for index in shirts:
+# for index in shirts:
 
     # shirt = driver.find_elements (by=By.XPATH, value = '//div[@class="v-stack justify-items-center gap-2"]')
 
-    sale_price = index.find_element(by=By.XPATH, value = './/span[@class="money"]')
-    print(sale_price.text)
+    # sale_price = index.find_element(by=By.XPATH, value = './/span[@class="money"]')
+    # print(sale_price.text)
 
-    shirt_title = index.find_element(by=By.XPATH, value = './/a[@class="product-title h6 "]')
-    print(shirt_title.text)
+    # shirt_title = index.find_element(by=By.XPATH, value = './/a[@class="product-title h6 "]')
+    # print(shirt_title.text)
     
+
+for index in range(len(shirts)):
+
+
+   
+   try:
+      
+        pop_up = WebDriverWait(driver,10).until(ec.presence_of_element_located((By.XPATH, '//button[@id="shopify-pc__banner__btn-decline"]'))).click()
+
+   except: 
+       
+       pass
+   
+   shirts = driver.find_elements (by=By.XPATH, value = '//product-card[@class="product-card"]')[index]
+   shirts.click()
+
+
+   shirt = WebDriverWait(driver,10).until(ec.presence_of_element_located((By.XPATH,'//a[@class="product-card__media"]')))
+
+   shirt_title = driver.find_element(by=By.XPATH, value = '//h1[@class="product-title h3"]')
+   print(shirt_title.text)
+
+   sizes = driver.find_elements(by=By.XPATH, value='//div[@class="variant-picker__option-values h-stack gap-2.5 wrap"]')[1]
+   print(sizes.text)
+
+   driver.back()
 
 
 
